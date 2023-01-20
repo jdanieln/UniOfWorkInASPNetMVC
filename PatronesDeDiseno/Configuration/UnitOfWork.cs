@@ -13,8 +13,8 @@ namespace PatronesDeDiseno.Configuration
         public UnitOfWork(PatronesDeDisenoContext context)
         {
             _context = context;
-            ProductRepository = new ProductRepository();
-            CategoryRepository = new CategoryRepository();
+            ProductRepository = new ProductRepository(_context);
+            CategoryRepository = new CategoryRepository(_context);
         }
         public void Commit()
         {
